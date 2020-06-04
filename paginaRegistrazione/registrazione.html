@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <title>Cinema Marco Polo - Registrazione</title>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width-device-width, initial-scale=1"/>
+        <link rel="icon" href="../img/icona.ico"/> <!--Icona del sito-->
+        <link rel="stylesheet" type="text/css" href="../bootstrap-4.4.1/dist/css/bootstrap.min.css"/>
+        <link rel="stylesheet" type="text/css" href="../bootstrap-4.4.1/dist/css/bootstrap-grid.css"/>
+        <link rel="stylesheet" type="text/css" href="../stile.css">
+        <script type="text/javascript" lang="javascript" src="../bootstrap-4.4.1/dist/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script type="text/javascript" lang="javascript" src="registrazioneScript.js"></script>
+    </head>
+    <body class="text-center">
+        <form action="registrazione.php" class="form-signin" method="POST" name="myForm" onsubmit="return validaForm()">
+            <img class="logo-rl" onclick="location.href='../homepage.html'" src="../img/cmp2.png" height="100px"/>
+            <h1><strong>Registrazione</strong></h1>
+            <br>
+            <input type="email" name="inputEmail" class="form-control" placeholder="Indirizzo email" required autofocus/>
+            <input type="text" name="inputName" class="form-control" placeholder="Nome" required/>
+            <input type="text" name="inputSurname" class="form-control" placeholder="Cognome" required/>
+            <input type="password" name="inputPassword" class="form-control" placeholder="Password" required/>  
+
+            <button class="btn btn-lg btn-block bottone-rl bianco" name="registrationButton" type="submit">Registrati</button> 
+        </form>
+        <br><hr class="larghezza-rl">
+        <p>Sei gia registrato?</p>
+
+        <button class="btn btn-sm btn-block bottone-foot-rl bianco"  
+                onclick="location.href='../paginaLogin/login.html'">Accedi</button>
+
+        <br><br>
+        <hr class="larghezza-rl">
+        <a href="../homepage.html" style="font-size: small; color: white;">Torna alla home</a>
+        <br><br>
+        <footer class="xx-small">© 2020 Copyright: Cinema Marco Polo.</footer>
+        
+    </body>
+</html>

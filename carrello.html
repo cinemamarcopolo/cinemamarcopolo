@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Cinema Marco Polo - Carrello</title>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <script type="text/javascript" src="functions.js"></script>
+        <script type="text/javascript" src="Vue/vue.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="bootstrap-4.4.1/dist/css/bootstrap.min.css"/>
+        <link rel="stylesheet" type="text/css" href="stile.css">
+        <link rel="stylesheet" type="text/css" href="bootstrap-4.4.1/dist/css/bootstrap-grid.css"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">  
+    </head>
+
+    <body style="margin-top: -85px;" onload="return mostraAcquisti();">
+
+        <a href="homepage.html"><h1 class="titolo-carrello"><strong>Cinema Marco Polo</strong></h1></a>
+
+        <h1 class="info-carrello"><strong>Il tuo carrello</strong></h1>
+      
+            <div id="daRiempire" class="ordine-carrello">
+               <!-- ordini qui -->      
+            </div>  
+
+            <br><br>
+
+            <div class="my_div descrizione-div-carrello">
+                <h2><strong>Completa l'acquisto</strong></h>
+            </div>
+
+            <br><br>
+
+            <form action = "" class="form-group acquisti-carrello">
+                <div class="margini-sinistra">
+                    <br>
+                    <h1 class="text-center nero"><strong>Il tuo ordine</strong></h1>
+                    <br>
+                    <label class="nero"><h5>Seleziona il metodo di pagamento:</h5></label> &emsp;
+                    <span>
+                        <select id="metodoPagamento" onchange="return cambiaLogo()">
+                            <option class="pagamento" value="" selected disabled hidden> Pago con... </option>
+                            <option class="pagamento" value="Visa"> Visa </option>
+                            <option class="pagamento" value="Mastercard"> Mastercard </option>
+                            <option class="pagamento" value="American_Express"> American Express </option>
+                        </select>
+                    </span> &emsp; &emsp;
+                    <span class="logo2" id="logo"><!-- da riempire --></span>
+                    <br>
+
+                    <label class="nero">Intestatario carta</label>
+                    <input id="intestatario" type="text" size="20"><br>
+                    <label class="nero">Numero carta</label>
+                    <input id="numeroCarta" type="number" size="16"><br>
+                    <label class="nero">Scadenza</label>
+                    <input id="scadenza" type="text" size="5"><br>
+                    <label class="nero">CVV</label>
+                    <input id="cvv" type="number" size="3">
+                    <br>
+                    <input id="check" type="checkbox"><label class="nero">Ho letto e accetto i <a href="javascript:void(0)">termini e le condizioni d'uso</a></label>
+                    <br>
+                    <br>
+                    <br>
+                    <label class="nero"><h4>Importo totale: </h4></label> &emsp;
+                    <label class="nero"><h4 id="importo_tot"></h4></label> 
+                </div>
+                <div class="modal-footer">
+                    <button onclick="return controllaCompra();" type="button" class="btn btn-primary"
+                        style="background-color:chocolate; border: none;"> Compra
+                    </button>
+                </div>  
+            </form>
+    </div>
+    <br><br><br>
+
+    <div id="sotto">
+        <barrasotto></barrasotto>
+    </div>        
+
+    <script type="text/javascript" src="pattern.js"></script>
+                       
+    </body>
+</html>

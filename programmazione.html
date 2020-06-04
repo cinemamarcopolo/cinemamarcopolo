@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Cinema Marco Polo - Programmazione</title>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+        <script src="bootstrap-4.4.1/dist/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="Vue/vue.min.js"></script>
+        <script type="text/javascript" src="functions.js"></script>
+        <link rel="icon" href="img/icona.ico"/> <!--Icona del sito-->
+        <link rel="stylesheet" type="text/css" href="bootstrap-4.4.1/dist/css/bootstrap.min.css"/>
+        <link rel="stylesheet" type="text/css" href="bootstrap-4.4.1/dist/css/bootstrap-grid.css"/>
+        <link rel="stylesheet" type="text/css" href="stile.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+
+    <body>
+
+        <div id="top">
+            <barratop v-bind:value="sessione" v-on:fai-logout="updateLogin" v-on:cambia-carrello="updateCarrello"></barratop>
+        </div>
+
+        <!-- Fine navbar -->
+
+        <div class="text-center intestazione">
+            <h1><strong>Nelle sale</strong></h1>
+        </div>
+        
+        <div class="container sfondoLocandina" style="background-image: url('img/1917.jpeg');">
+            <div class="filtro"></div>
+            <div class="row divLocandina">
+                <div class="col-lg">
+                    <img src="img/1917-playbill.jpg" width="43%" class="locandina"></img>
+                </div>
+                <div class="col-xl-8">
+                    <br>
+                    <h1 ><strong>1917</strong></h1>
+                    Due giovani soldati britannici affrontano i momenti più crudeli della Prima Guerra Mondiale 
+                    quando intraprendono una pericolosa missione per salvare 1.600 uomini da morte certa.
+                    <br><br>
+                    <u><strong>Orari:</strong></u>
+                     Lunedì-Domenica: 18:00, 21:00<br><br>
+                    <strong>Sala 1</strong>
+                    <br>
+                    <span class="allineamento-destra">
+                        <button data-toggle="modal" data-target="#selezione"
+                         type="button" class="bottone btn right button btn-xs" onclick="return passaTitolo('1917');">Aggiungi al Carrello 🛒</button>
+                    </span>                   
+                </div>
+            </div>
+        </div>
+
+        <br><br><br>
+
+        <div class="container sfondoLocandina" style="background-image: url('img/hollywood.jpg');">
+            <div class="filtro"></div>
+            <div class="row divLocandina">
+                <div class="col-lg">
+                    <img src="img/hollywood-playbill.jpg" width="47%" class="locandina"></img>
+                </div>
+                <div class="col-xl-8">
+                    <br>
+                    <h1 ><strong>Once Upon a Time in Hollywood</strong></h1>
+                    Rick Dalton, attore televisivo di telefilm western in declino, e la sua controfigura Cliff Booth cercano di ottenere ingaggi e 
+                        fortuna nell'industria cinematografica al tramonto dell'età dell'oro di Hollywood.
+                    <br><br>
+                    <u><strong>Orari:</strong></u>
+                     Lunedì-Domenica: 18:00, 21:00<br><br>
+                    <strong>Sala 2</strong>
+                    <br>
+                    <span class="allineamento-destra">
+                        <button onclick="passaTitolo('Once Upon a Time in Hollywood')" data-toggle="modal" data-target="#selezione"
+                         type="button" class="bottone btn right button btn-xs">Aggiungi al Carrello 🛒</button>
+                   
+                    </span>
+                    
+                </div>
+            </div>
+        </div>
+
+        <br><br><br>
+
+        <div class="container sfondoLocandina" style="background-image: url('img/spiderman.jpg');">
+             <div class="filtro"></div>
+            <div class="row divLocandina">
+                <div class="col-lg">
+                    <img src="img/spiderman-playbill.jpg" width="47%" class="locandina"></img>
+                </div>
+                <div class="col-xl-8">
+                    <br>
+                    <h1 ><strong>Spider-Man: Far From Home</strong></h1>
+                    La pacifica vacanza in Europa di Peter Parker prende una svolta inaspettata quando Nick Fury si presenta all'improvviso nella sua stanza d'albergo 
+                        chiedendogli di collaborare a fermare il malvagio Mysterio, intenzionato a devastare il continente.
+                    <br><br>
+                    <u><strong>Orari:</strong></u>
+                     Lunedì-Domenica: 18:00, 21:00<br><br>
+                    <strong>Sala 3</strong>
+                    <br>
+                    <span class="allineamento-destra">
+                        <button onclick="passaTitolo('Spider-Man: Far From Home')" data-toggle="modal" data-target="#selezione"
+                         type="button" class="bottone btn right button btn-xs">Aggiungi al Carrello 🛒</button>
+                   
+                    </span>
+                    
+                </div>
+            </div>
+        </div>
+
+        <br><br><br>
+
+        
+        <div class="container sfondoLocandina" style="background-image: url('img/matrix.jpg');">
+             <div class="filtro"></div>
+
+            <div class="grandi-classici">
+                <h2>Per la rassegna: <strong>i grandi classici</strong></h2>
+            </div>
+
+            <div class="row divLocandina">
+                <div class="col-lg">
+                    <img src="img/matrix-playbill.jpg" width="47%" class="locandina"></img>
+                </div>
+                <div class="col-xl-8">
+                    <br>
+                    <h1 ><strong>Matrix</strong></h1>
+                    Esistono due realtà: una è l'esistenza che conduciamo ogni giorno, l'altra è nascosta. Neo vuole scoprire la verità su Matrix, mondo virtuale 
+                        elaborato al computer creato per tenere sotto controllo le persone. Morpheus potrebbe aiutarlo.
+                    <br><br>
+                    <u><strong>Orari:</strong></u>
+                    Lunedì-Domenica: 18:00, 21:00<br><br>
+                    <strong>Sala 4</strong>
+                    <br>
+                    <span class="allineamento-destra">
+                        <button onclick="passaTitolo('Matrix')"
+                        data-toggle="modal" data-target="#selezione" type="button" class="bottone btn right button btn-xs">Aggiungi al Carrello 🛒</button>                  
+                    </span>                   
+                </div>
+            </div>
+        </div>
+
+        <br><br><br>
+
+        <!-- Popup -->
+
+        <div class="modal fade bd-example-modal-lg nero" id="selezione" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3 class="modal-title" id="exampleModalLongTitle"><p>Completa i campi per aggiungere al carrello</p>
+                        <strong id="form_titolofilm"></strong> 
+                        </h3>
+                        <button type="button" class="close" data-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form name="form_carrello">
+                            <div class="form-group">
+                                <label ><h5>Giorno</h5></label> &emsp;
+                                <select id="giorno" onchange="return calcolaPrezzo()">
+                                    <option value="" selected disabled hidden> Scegli un giorno </option>
+                                    <option value="Lunedì"> Lunedì </option>
+                                    <option value="Martedì"> Martedì </option>
+                                    <option value="Mercoledì"> Mercoledì </option>
+                                    <option value="Giovedì"> Giovedì </option>
+                                    <option value="Venerdì"> Venerdì </option>
+                                    <option value="Sabato"> Sabato </option>
+                                    <option value="Domenica"> Domenica </option>
+                                </select>
+                                <br>
+                                <br>
+                                <label><h5>Orario</h5></label> &emsp;
+                                <select id="orario">
+                                    <option value="" selected disabled hidden> Scegli un orario </option>
+                                    <option value="18"> 18:00 </option>
+                                    <option value="21"> 21:00 </option>
+                                </select>
+                                <br>
+                                <br>
+                                <label><h5>Numero biglietti</h5></label> &emsp;
+                                <select id="num_biglietti" onchange="return calcolaPrezzo()">
+                                    <option value="1" selected>1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                </select>
+                                <br>
+                                <br>
+                                <input type="radio" id="studente" name="tipo" value="studente"  onchange="return calcolaPrezzo()">
+                                <label for="studente">Dichiaro di essere uno studente universitario</label><br>
+                                <input type="radio" id="minorenne" name="tipo" value="minorenne"  onchange="return calcolaPrezzo()">
+                                <label for="minorenne">
+                                    Dichiaro di essere minorenne o di avere  diritto al prezzo ridotto
+                                </label>
+                                <br>
+                                <input type="radio" id="" name="tipo" value=""  onchange="return calcolaPrezzo()" checked>
+                                <label for="studente">Nessuno dei due</label>
+                                <br>
+                                <br>
+                                <br>
+                                <label><h4>Importo totale: </h4></label> &emsp;
+                                <label style="font-style: normal; font-size: x-large;">
+                                    <span><strong id="importo">0</strong></span>
+                                    <span><strong>€</strong></span>
+                                </label>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Annulla</button>
+                        <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="inviaDati();"
+                        style="background-color:chocolate; border: none;">
+                            Invia al Carrello 🛒
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Inizio footer -->
+        
+        <div id="sotto">
+            <barrasotto></barrasotto>
+        </div>        
+
+        <script type="text/javascript" src="pattern.js"></script>
+    </body>
+</html>

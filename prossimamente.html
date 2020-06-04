@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Cinema Marco Polo - Prossimamente</title>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script> 
+        <script src="bootstrap-4.4.1/dist/js/bootstrap.min.js"></script> 
+        <script type="text/javascript" src="Vue/vue.min.js"></script>
+        <link rel="icon" href="img/icona.ico"/> <!--Icona del sito-->
+        <link rel="stylesheet" type="text/css" href="bootstrap-4.4.1/dist/css/bootstrap.min.css"/>
+        <link rel="stylesheet" type="text/css" href="bootstrap-4.4.1/dist/css/bootstrap-grid.css"/>
+        <link rel="stylesheet" type="text/css" href="stile.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+
+    <body">
+
+        <div id="top">
+            <barratop v-bind:value="sessione"  v-on:fai-logout="updateLogin" v-on:cambia-carrello="updateCarrello"></barratop>
+        </div>
+
+        <!--############################# Fine navbar ################################-->
+        
+        <div class="text-center intestazione" name="trailer">
+            <h1><strong>In arrivo</strong></h1>
+        </div>
+        
+
+        <div id="film"> 
+            <div class="container"> 
+                <div class="row">
+                    <div class="col-xl-8">
+                        <iframe class="frame-film" width="100%" height="400px" v-bind:src="trailerFilm"
+                        frameborder="1" allowfullscreen></iframe>
+                    </div>
+        
+                    <div class="col-lg">
+                        <h2 class="titolo-film"><strong>{{ nomeFilm }}</strong></h2>
+                        <br>
+                        <p>{{ descrizioneFilm }}</p><br>
+                    </div>
+                </div>
+            </div>
+
+            <br><br>
+            <h2 class="my_div descrizione-div-film" >Clicca sulla locandina per vedere il trailer</h2>
+            <br>
+            
+            <div class="div-film">
+                
+                    <img v-for="(x,index) in pellicola" v-bind:src="locandinaFilm(index)" 
+                    v-on:click="updatePellicola(index)" width="13%" />
+                   
+            </div>
+        </div>
+
+        <br><br><br><br>
+        
+        <!--############################# Inizio footer ################################-->
+      
+        <div id="sotto">
+            <barrasotto></barrasotto>
+        </div>        
+
+        <script type="text/javascript" src="pattern.js"></script>
+        <script type="text/javascript" src="vueTrailer.js"></script>
+    </body>
+</html>
